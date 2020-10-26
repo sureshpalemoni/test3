@@ -12,6 +12,11 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
+- download: current  # refers to artifacts published by current pipeline
+  artifact: WebApp
+  patterns: '**/.js'
+  displayName: Download artifact WebApp
+
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
